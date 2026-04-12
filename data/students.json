@@ -1,0 +1,12 @@
+{
+  "students": [
+    {
+      "id": "01af31aa-ba0c-49e2-ae95-82c1b75973fd",
+      "name": "Igor",
+      "email": "igor@email.com",
+      "cpf": "12287656476",
+      "createdAt": "2026-04-12T19:55:43.796Z",
+      "updatedAt": "2026-04-12T19:55:43.796Z"
+    }
+  ]
+}
