@@ -30,7 +30,7 @@ interface TestWorld {
     goals: Goal[];
   };
   matrixPatches?: Array<{ studentId: string; goalId: string; value: EvaluationValue }>;
-  previousCellValue?: string;
+  previousCellValue?: EvaluationValue | null;
   dispatchStudentName?: string;
   pendingEventsClassTopics?: string[];
   studentCounter: number;

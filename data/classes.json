@@ -1,7 +1,7 @@
 {
   "classes": [
     {
-      "id": "9dbd1321-873c-4403-b968-5bb8108cb9cd",
+      "id": "14b38feb-c97b-4ce9-b59b-887cb4d754ce",
       "year": 2026,
       "semester": 1,
       "studentIds": [],
@@ -16,11 +16,11 @@
         }
       ],
       "evaluations": [],
-      "createdAt": "2026-04-15T18:57:33.568Z",
-      "updatedAt": "2026-04-15T18:57:33.573Z"
+      "createdAt": "2026-04-15T19:42:18.067Z",
+      "updatedAt": "2026-04-15T19:42:18.070Z"
     },
     {
-      "id": "27a35b57-dee5-4399-af9b-315a79cf0a2a",
+      "id": "4df274ca-8e68-434e-a92e-0b048708044b",
       "year": 2026,
       "semester": 1,
       "studentIds": [],
@@ -35,8 +35,8 @@
         }
       ],
       "evaluations": [],
-      "createdAt": "2026-04-15T18:57:33.576Z",
-      "updatedAt": "2026-04-15T18:57:33.599Z"
+      "createdAt": "2026-04-15T19:42:18.072Z",
+      "updatedAt": "2026-04-15T19:42:18.084Z"
     }
   ]
 }
