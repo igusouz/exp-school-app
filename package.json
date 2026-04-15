@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:unit": "vitest run",
+    "test:acceptance": "tsx ./node_modules/@cucumber/cucumber/bin/cucumber.js tests/acceptance/**/*.feature --import tests/acceptance/steps/**/*.ts",
+    "test": "npm run test:unit && npm run test:acceptance"
   },
   "dependencies": {
     "next": "16.2.3",
@@ -15,6 +18,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^12.8.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/nodemailer": "^8.0.0",
@@ -24,6 +28,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^4.1.4"
   }
 }

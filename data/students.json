@@ -1,12 +1,12 @@
 {
   "students": [
     {
-      "id": "01af31aa-ba0c-49e2-ae95-82c1b75973fd",
-      "name": "Igor",
-      "email": "igor@email.com",
-      "cpf": "12287656476",
-      "createdAt": "2026-04-12T19:55:43.796Z",
-      "updatedAt": "2026-04-12T19:55:43.796Z"
+      "id": "342be8ed-a2e0-4686-9e9c-f842d7aea76a",
+      "name": "John Doe",
+      "email": "john.doe.01@example.com",
+      "cpf": "10000000001",
+      "createdAt": "2026-04-15T18:57:33.580Z",
+      "updatedAt": "2026-04-15T18:57:33.580Z"
     }
   ]
 }

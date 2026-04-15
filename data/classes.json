@@ -1,3 +1,42 @@
 {
-  "classes": []
+  "classes": [
+    {
+      "id": "9dbd1321-873c-4403-b968-5bb8108cb9cd",
+      "year": 2026,
+      "semester": 1,
+      "studentIds": [],
+      "goals": [
+        {
+          "id": "requirements",
+          "label": "Requirements"
+        },
+        {
+          "id": "testing",
+          "label": "Testing"
+        }
+      ],
+      "evaluations": [],
+      "createdAt": "2026-04-15T18:57:33.568Z",
+      "updatedAt": "2026-04-15T18:57:33.573Z"
+    },
+    {
+      "id": "27a35b57-dee5-4399-af9b-315a79cf0a2a",
+      "year": 2026,
+      "semester": 1,
+      "studentIds": [],
+      "goals": [
+        {
+          "id": "requirements",
+          "label": "Requirements"
+        },
+        {
+          "id": "testing",
+          "label": "Testing"
+        }
+      ],
+      "evaluations": [],
+      "createdAt": "2026-04-15T18:57:33.576Z",
+      "updatedAt": "2026-04-15T18:57:33.599Z"
+    }
+  ]
 }

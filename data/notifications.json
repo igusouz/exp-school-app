@@ -1,4 +1,14 @@
 {
-  "pending": [],
+  "pending": [
+    {
+      "studentId": "342be8ed-a2e0-4686-9e9c-f842d7aea76a",
+      "classId": "27a35b57-dee5-4399-af9b-315a79cf0a2a",
+      "goalId": "requirements",
+      "goalLabel": "Requirements",
+      "previousValue": null,
+      "newValue": "MPA",
+      "changedAt": "2026-04-15T18:57:33.590Z"
+    }
+  ],
   "dispatchLog": {}
 }
