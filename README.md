@@ -37,6 +37,9 @@ The code follows a layered structure inspired by Clean Architecture:
 - API routes: `app/api`
 - UI pages/components: `app`, `components`
 - JSON data files: `data`
+- Unit tests (Vitest): `tests/unit`
+- Acceptance tests (Gherkin + Cucumber): `tests/acceptance`
+- Shared test helpers: `tests/support`
 
 ## Data Persistence
 
@@ -110,6 +113,67 @@ Lint:
 ```bash
 npm run lint
 ```
+
+## Testing
+
+The project includes both unit tests and acceptance tests.
+
+### Unit Tests
+
+- Runner: Vitest
+- Focus: service/business logic and repository interactions
+
+Run unit tests:
+
+```bash
+npm run test:unit
+```
+
+### Acceptance Tests
+
+- Runner: Cucumber
+- Format: Gherkin (`.feature`)
+- Step definitions: TypeScript
+
+Run acceptance tests:
+
+```bash
+npm run test:acceptance
+```
+
+### Run Full Test Suite
+
+```bash
+npm run test
+```
+
+### Current Test Files
+
+- Unit tests:
+	- `tests/unit/student-service.test.ts`
+	- `tests/unit/evaluation-notification.test.ts`
+- Acceptance test feature:
+	- `tests/acceptance/student-evaluation-and-notification.feature`
+- Acceptance step definitions:
+	- `tests/acceptance/steps/student-evaluation.steps.ts`
+
+### Acceptance Coverage Highlights
+
+The acceptance suite currently validates scenarios such as:
+
+- Updating evaluation matrix values (MANA, MPA, MA)
+- Queueing notification events without immediate email send
+- Student deletion with automatic unenrollment from classes
+- Student creation and duplicate CPF rejection
+- Class creation with enrolled students and goal definitions
+- Daily summary dispatch aggregation across multiple classes
+- Prevention of duplicate summary emails on the same day
+- Clearing class evaluation cells when a student is removed from enrollment
+
+### Test Data Isolation
+
+- Tests reset JSON files before each scenario/test using `tests/support/data-store.ts`.
+- This prevents cross-test contamination while preserving reproducibility.
 
 ## Main UI Modules
 
