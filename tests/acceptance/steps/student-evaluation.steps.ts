@@ -698,14 +698,16 @@ Then("{string} should be marked as dispatched for the current date", async funct
   assert.equal(store.dispatchLog[student.id], todayDateKey());
 });
 
-Then("the system should not send another email to {string}", function (_studentName: string) {
+Then("the system should not send another email to {string}", function (studentName: string) {
   const world = getWorld(this);
+  assert.ok(studentName.length > 0, "Student name should be provided.");
   assert.ok(world.lastDispatch, "No dispatch result available.");
   assert.equal(world.lastDispatch.sent, 0);
 });
 
-Then("the dispatch result should count {string} as skipped", function (_studentName: string) {
+Then("the dispatch result should count {string} as skipped", function (studentName: string) {
   const world = getWorld(this);
+  assert.ok(studentName.length > 0, "Student name should be provided.");
   assert.ok(world.lastDispatch, "No dispatch result available.");
   assert.ok(world.lastDispatch.skipped >= 1, "Expected skipped to be at least 1.");
 });

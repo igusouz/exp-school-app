@@ -77,6 +77,18 @@ export default function ClassDetailsPage({
     return students.filter((student) => idSet.has(student.id));
   }, [schoolClass, students]);
 
+  const evaluationMap = useMemo(() => {
+    if (!schoolClass) {
+      return new Map<string, string>();
+    }
+
+    const map = new Map<string, string>();
+    for (const cell of schoolClass.evaluations) {
+      map.set(`${cell.studentId}:${cell.goalId}`, cell.value);
+    }
+    return map;
+  }, [schoolClass]);
+
   return (
     <AppShell>
       {loading ? <p className="text-slate-700">Loading class data...</p> : null}
@@ -116,6 +128,56 @@ export default function ClassDetailsPage({
                 ))}
               </ul>
             )}
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900">Current Grades</h3>
+            {enrolledStudents.length === 0 ? (
+              <p className="mt-3 text-slate-600">No grades available without enrolled students.</p>
+            ) : (
+              <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200">
+                <table className="min-w-full border-collapse">
+                  <thead className="bg-slate-100">
+                    <tr>
+                      <th className="px-3 py-2 text-left text-sm font-semibold text-slate-700">
+                        Student
+                      </th>
+                      {schoolClass.goals.map((goal) => (
+                        <th
+                          key={goal.id}
+                          className="px-3 py-2 text-left text-sm font-semibold text-slate-700"
+                        >
+                          {goal.label}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {enrolledStudents.map((student) => (
+                      <tr key={student.id} className="border-t border-slate-100">
+                        <td className="px-3 py-3 text-sm font-medium text-slate-900">
+                          {student.name}
+                        </td>
+                        {schoolClass.goals.map((goal) => {
+                          const key = `${student.id}:${goal.id}`;
+                          const value = evaluationMap.get(key) ?? "-";
+                          return (
+                            <td key={key} className="px-3 py-3 text-sm text-slate-700">
+                              {value}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            <p className="mt-3 text-sm text-slate-600">
+              Legend: MANA = Goal Not Yet Reached | MPA = Goal Partially Reached | MA = Goal Reached
+            </p>
           </div>
         </section>
       ) : null}

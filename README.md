@@ -230,7 +230,21 @@ Current implementation exposes manual dispatch endpoint:
 
 - `POST /api/notifications/dispatch`
 
-For production, schedule this endpoint once per day using your preferred scheduler (for example Vercel Cron, GitHub Actions, or server cron).
+Automated daily dispatch is also available through:
+
+- `GET /api/cron/daily-dispatch`
+
+This project includes a Vercel cron schedule in `vercel.json`:
+
+- `0 3 * * *` (once per day, UTC)
+
+Security note:
+
+- Set `CRON_SECRET` in your environment.
+- The cron route checks `Authorization: Bearer <CRON_SECRET>`.
+- In production, requests without a valid secret are rejected with `401`.
+
+You may still trigger manually for operational control via the dashboard button and `/api/notifications/dispatch`.
 
 ## Validation Rules (Highlights)
 
